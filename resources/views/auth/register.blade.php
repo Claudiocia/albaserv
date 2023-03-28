@@ -25,6 +25,11 @@
             </div>
 
             <div class="mt-4">
+                <x-label for="celular" value="{{ __('Celular') }}" />
+                <x-input id="celular" class="block mt-1 w-full" type="text" name="celular" :value="old('celular')" required autocomplete="celular" />
+            </div>
+
+            <div class="mt-4">
                 <x-label for="cadastro" value="{{ __('Cadastro') }}" />
                 <x-input id="cadastro" class="block mt-1 w-full" type="text" name="cadastro" :value="old('cadastro')" required autocomplete="cadastro" />
             </div>
@@ -32,6 +37,11 @@
             <div class="mt-4">
                 <x-label for="lotacao" value="{{ __('Lotação') }}" />
                 <x-input id="lotacao" class="block mt-1 w-full" type="text" name="lotacao" :value="old('lotacao')" required autocomplete="lotacao" />
+            </div>
+
+            <div class="mt-4">
+                <x-label for="ramal" value="{{ __('Ramal') }}" />
+                <x-input id="ramal" class="block mt-1 w-full" type="text" name="ramal" :value="old('ramal')" required autocomplete="ramal" />
             </div>
 
             <div class="mt-4">

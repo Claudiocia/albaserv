@@ -7,6 +7,41 @@
     border-radius: 20px;
 }
 
+.btn-assinar{
+    width: 120px;
+    margin: 10px;
+    grid-auto-columns: fit-content(50vw);
+}
+
+.btn-deletar {
+    width: 120px;
+    height: 38px;
+    margin: 10px;
+    background-color: #d62728!important;
+    color: #FFFFFF;
+}
+.btn-deletar:hover{
+    background-color: #721c24!important;
+}
+
+.btn-cancelar {
+    width: 120px;
+    height: 38px;
+    margin: 10px;
+    background-color: #6b7280!important;
+    color: #FFFFFF;
+}
+.btn-cancelar:hover{
+    background-color: #1d2124!important;
+}
+
+.btn-salvar {
+    width: 120px;
+    margin: 10px;
+    background-color: #1c7430!important;
+    color: #FFFFFF;
+}
+
 .logo-alba{
     height: 80px;
 }
@@ -391,4 +426,34 @@
         width: 50%;
     }
 
+}
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    background: #2d71a1;
+    color: #f0f0f0!important;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    transition: all 0.4s;
+}
+.back-to-top i {
+    font-size: 28px;
+    color: #fff;
+    line-height: 0;
+}
+.back-to-top:hover {
+    background: #3687c1;
+    color: #fff;
+}
+.back-to-top.active {
+    visibility: visible;
+    opacity: 1;
 }

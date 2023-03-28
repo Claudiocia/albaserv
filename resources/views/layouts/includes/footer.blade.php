@@ -81,7 +81,7 @@
     </div>
 </footer><!-- End Footer -->
 
-<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+<a href="#" class="back-to-top"><i class="fa-solid fa-circle-up" style="color: #2061cf;"></i></a>
 
 <!-- Vendor JS Files -->
 <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
@@ -98,6 +98,9 @@
 <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js" integrity="sha512-Rdk63VC+1UYzGSgd3u2iadi0joUrcwX0IWp2rTh6KXFoAmgOjRS99Vynz1lJPT8dLjvo6JZOqpAHJyfCEZ5KoA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="{{asset('js/main.js')}}"></script>
+
+<script src="{{asset('ckeditor/ckeditor.js')}}"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         $('.ckeditor').ckeditor();

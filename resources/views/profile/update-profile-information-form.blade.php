@@ -81,6 +81,28 @@
                 @endif
             @endif
         </div>
+
+        <!-- Lotacao -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="lotacao" value="{{ __('Lotação') }}" />
+            <x-input id="lotacao" type="text" class="mt-1 block w-full" wire:model.defer="state.lotacao" autocomplete="lotacao" />
+            <x-input-error for="lotacao" class="mt-2" />
+        </div>
+
+        <!-- Celular -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="celular" value="{{ __('Celular') }}" />
+            <x-input id="celular" type="text" class="mt-1 block w-full" wire:model.defer="state.celular" autocomplete="celular" />
+            <x-input-error for="celular" class="mt-2" />
+        </div>
+
+        <!-- Ramal -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="ramal" value="{{ __('Ramal') }}" />
+            <x-input id="ramal" type="text" class="mt-1 block w-full" wire:model.defer="state.ramal" autocomplete="ramal" />
+            <x-input-error for="ramal" class="mt-2" />
+        </div>
+
     </x-slot>
 
     <x-slot name="actions">

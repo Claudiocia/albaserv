@@ -6,7 +6,7 @@
             </div>
         @endif
         <div class="table-responsive">
-            <table class="table table-borderless">
+            <table class="table table-borderless table-striped">
                 {{-- Table header--}}
                 <thead>
                     {{-- Filters --}}
@@ -53,13 +53,13 @@
                                                     </span>
                                                     <input wire:model.defer="searchBy"
                                                            class="form-control"
-                                                           placeholder="{{ __('Search by:') }} {{ $searchableLabels }}"
-                                                           aria-label="{{ __('Search by:') }} {{ $searchableLabels }}"
+                                                           placeholder="{{ __('Buscar por:') }} {{ $searchableLabels }}"
+                                                           aria-label="{{ __('Buscar por:') }} {{ $searchableLabels }}"
                                                            aria-describedby="search-for-rows">
                                                     <span class="input-group-text">
                                                         <button class="btn btn-sm btn-link link-primary p-0"
                                                                 type="submit"
-                                                                title="{{ __('Search by:') }} {{ $searchableLabels }}">
+                                                                title="{{ __('Buscar por:') }} {{ $searchableLabels }}">
                                                             {!! config('laravel-table.icon.validate') !!}
                                                         </button>
                                                     </span>
@@ -169,7 +169,7 @@
                         {{-- Row actions --}}
                         @if($tableRowActionsArray)
                             <th wire:key="row-actions" class="align-middle text-end" scope="col">
-                                {{ __('Actions') }}
+                                {{ __('Ações') }}
                             </th>
                         @endif
                     </tr>
