@@ -39,4 +39,9 @@ class Predio extends Model implements Transformable
 		'alebra_id',
 	];
 
+    public function alebra()
+    {
+        return $this->belongsTo(Alebra::class);
+    }
+
 }

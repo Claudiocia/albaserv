@@ -27,6 +27,10 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @method static \Illuminate\Database\Eloquent\Builder|Ambiente whereNum($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Ambiente whereTipo($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Ambiente whereUpdatedAt($value)
+ * @property string|null $chave
+ * @property string|null $tag
+ * @method static \Illuminate\Database\Eloquent\Builder|Ambiente whereChave($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Ambiente whereTag($value)
  * @mixin \Eloquent
  */
 class Ambiente extends Model implements Transformable
@@ -39,10 +43,17 @@ class Ambiente extends Model implements Transformable
      * @var array
      */
     protected $fillable = [
+        'chave',
 		'nome',
 		'num',
 		'tipo',
+        'tag',
 		'andar_id',
 	];
+
+    public function andar()
+    {
+        return $this->belongsTo(Andar::class);
+    }
 
 }

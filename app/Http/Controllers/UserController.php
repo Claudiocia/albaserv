@@ -74,7 +74,7 @@ class UserController extends Controller
         ]);
         $user->roles()->attach($data['roles']);
 
-        $request->session()->flash('msg', 'Usuário Criado com sucesso');
+        $request->session()->flash('msg', 'Usuário criado com sucesso');
         return redirect()->route('admin.users.index');
     }
 

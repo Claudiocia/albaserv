@@ -39,4 +39,9 @@ class Andar extends Model implements Transformable
 		'ala_id',
 	];
 
+    public function ala()
+    {
+        return $this->belongsTo(Ala::class);
+    }
+
 }

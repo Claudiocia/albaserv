@@ -14,9 +14,11 @@ return new class extends Migration
 	{
 		Schema::create('ambientes', function(Blueprint $table) {
             $table->id();
+            $table->string('chave')->nullable();
             $table->string('nome');
             $table->string('num')->nullable();
             $table->string('tipo');
+            $table->text('tag')->nullable();
             $table->bigInteger('andar_id')->unsigned();
             $table->foreign('andar_id')->references('id')->on('andars');
             $table->timestamps();

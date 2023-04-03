@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AlebraController;
+use App\Http\Controllers\AmbienteController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ServerController;
 use App\Http\Controllers\SiteController;
@@ -30,7 +32,13 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'can:admin'
 });
 
 Route::group(['prefix' => 'pesq', 'as' => 'pesq.', 'middleware' => 'can:pesq'], function (){
+    Route::get('dashboard-pesq', [ServerController::class, 'pesq'])->name('dashboard-pesq');
+    Route::resource('alebras', AlebraController::class);
+    Route::resource('ambientes', AmbienteController::class);
 
+    //rotas que vão trabalhar com o ajax
+    Route::get('/ambientes/get-alas/{id}', [AmbienteController::class, 'getAlas']);
+    Route::get('/ambientes/get-andars/{id}', [AmbienteController::class, 'getAndars']);
 });
 
 Route::group(['prefix' => 'legis', 'as' => 'legis.', 'middleware' => 'can:legis'], function (){

@@ -14,6 +14,11 @@ class ServerController extends Controller
         return view('dashboard');
     }
 
+    public function pesq()
+    {
+        return view('pesq.dashboard-pesq');
+    }
+
     /**
      * Show the form for creating a new resource.
      */

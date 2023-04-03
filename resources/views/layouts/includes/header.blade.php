@@ -37,4 +37,37 @@
             background: #f7fafc;
         }
     </style>
+    <!-- script ajax para preenchimento de combobox dinamico -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#predio').change(function (e) {
+                $('#ala').empty();
+                var id = $(this).val();
+
+                $.get('/pesq/ambientes/get-alas/'+id, function (alas) {
+                    var cmb = '<option value="">Selecione a Ala</option>';
+                    $.each(alas, function (key, value) {
+                       cmb = cmb + '<option value="' + key + '">' + value + '</option>';
+                    });
+                    $('#ala').html(cmb);
+                }, 'json');
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function (){
+            $('#ala').change(function (e) {
+                $('#andar').empty();
+                var id = $(this).val();
+
+                $.get('/pesq/ambientes/get-andars/'+id, function (andars) {
+                    var cmb2 = '<option value="">Selecione o andar</option>';
+                    $.each(andars, function (key, value) {
+                        cmb2 = cmb2 + '<option value="' + key + '">' + value + '</option>';
+                    });
+                    $('#andar').html(cmb2);
+                }, 'json');
+            });
+        });
+    </script>
 </head>

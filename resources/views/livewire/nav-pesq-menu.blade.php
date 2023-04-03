@@ -5,28 +5,62 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ route('/') }}">
                         <x-application-mark-white class="block h-9 w-auto" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link href="{{ route('dashboard') }}">
-                        <strong class="label-menu {{request()->routeIs('dashboard') ? 'active-my' : ''}}">{{ __('Dashboard') }}</strong>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-4 sm:flex">
+                    <x-nav-link  href="{{ route('dashboard') }}">
+                        <strong class="label-menu {{request()->routeIs('dashboard') ? 'active-my' : ''}}">{{ __('Painel gerência') }}</strong>
                     </x-nav-link>
-                    @foreach(Auth::user()->roles as $role)
-                        @if($role->system == 'admin')
-                            <x-nav-link href="{{ route('admin.dashboard-admin') }}">
-                                <strong class="label-menu {{request()->routeIs('admin.dashboard-admin') ? 'active-my' : ''}}">{{ __('Admin') }}</strong>
-                            </x-nav-link>
-                        @endif
-                        @if($role->system == 'pesq' || $role->system == 'admin')
-                            <x-nav-link href="{{route('pesq.dashboard-pesq')}}">
-                                <strong class="label-menu {{request()->routeIs('pesq.dashboard-pesq') ? 'active-my' : ''}}">{{ __('Pesq') }}</strong>
-                            </x-nav-link>
-                        @endif
-                    @endforeach
+                    <x-nav-link href="{{ route('pesq.dashboard-pesq') }}">
+                        <strong class="label-menu {{request()->routeIs('pesq.dashboard-pesq') ? 'active-my' : ''}}">{{ __('Painel Pesquisa') }}</strong>
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('pesq.alebras.index') }}">
+                        <strong class="label-menu {{request()->routeIs('pesq.alebras.index') || request()->routeIs('pesq.alebras.show') || request()->routeIs('pesq.alebras.create') || request()->routeIs('pesq.alebras.edit') ? 'active-my' : ''}}">{{ __('Assembleias') }}</strong>
+                    </x-nav-link>
+                    <x-dropdown width="48">
+                        <x-slot name="trigger">
+                            <span class="inline-flex rounded-md label-menu my-dropdown">
+                                ALBA
+                                <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </span>
+                        </x-slot>
+                        <x-slot name="content" height="400">
+                            <div class="block px-4 py-2 text-xs text-gray-400">
+                                {{ __('Conteúdo da ALBA') }}
+                            </div>
+                            <div class="border-t border-gray-200"></div>
+                            <x-dropdown-link href="#">
+                                {{ __('Mesa Diretora') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link href="#">
+                                {{ __('Comissões Permanentes') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link href="#">
+                                {{ __('Comissões Temporárias') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link href="#">
+                                {{ __('Lideranças Partidárias') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link href="#">
+                                {{ __('Deputados Estaduais') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link href="#">
+                                {{ __('Administração ALBA') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link href="{{route('pesq.ambientes.index')}}">
+                                <strong class="{{request()->routeIs('pesq.ambientes.index') || request()->routeIs('pesq.ambientes.show') || request()->routeIs('pesq.ambientes.create') || request()->routeIs('pesq.ambientes.edit') ? 'active-my' : ''}}">{{ __('Estrut. Adm.') }}</strong>
+                            </x-dropdown-link>
+                        </x-slot>
+                    </x-dropdown>
+                    <x-nav-link href="#" :active="request()->routeIs('#')">
+                        <strong class="label-menu">{{ __('a criar') }}</strong>
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -42,7 +76,7 @@
                             @else
                                 <span class="inline-flex rounded-md">
                                     <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">
-                                        {{ Auth::user()->name }}
+                                        <strong>  {{ Auth::user()->name }}</strong>
 
                                         <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -75,7 +109,7 @@
                                 @csrf
 
                                 <x-dropdown-link href="{{ route('logout') }}"
-                                         @click.prevent="$root.submit();">
+                                                 @click.prevent="$root.submit();">
                                     {{ __('Log Out') }}
                                 </x-dropdown-link>
                             </form>
@@ -100,8 +134,9 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+                {{ __('Painel gerência') }}
             </x-responsive-nav-link>
+
         </div>
 
         <!-- Responsive Settings Options -->
@@ -136,7 +171,7 @@
                     @csrf
 
                     <x-responsive-nav-link href="{{ route('logout') }}"
-                                   @click.prevent="$root.submit();">
+                                           @click.prevent="$root.submit();">
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>
                 </form>
@@ -144,3 +179,4 @@
         </div>
     </div>
 </nav>
+

@@ -29,13 +29,9 @@
                             </div>
                         </div>
                         </div>
-                    {{ $roles->links() }}
-
                 </div>
             </div>
         </div>
-
-
     </div>
 </div>
 @endsection

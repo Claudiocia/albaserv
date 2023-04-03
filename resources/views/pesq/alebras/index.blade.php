@@ -1,4 +1,11 @@
-@extends('layouts.admin')
+@extends('layouts.pesq')
+@section('header')
+    <div name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Assembleias do Brasil') }}
+        </h2>
+    </div>
+@endsection
 
 @section('conteudo')
 <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
@@ -8,22 +15,17 @@
                 <div class="col-md-12">
                     <div class="w-auto p-3">
                         <div class="panel-heading-admin">
-                            <h5>Novo Sistema</h5>
+                            <h5>Assembleias Legislativas do Brasil</h5>
                         </div>
                         <div class="panel-body">
                             <div class="row btn-new-reset">
                                 <div class="btn-hero">
-                                    <p><a href="{{route('admin.roles.index')}}" class="btn btn-success btn-salvar">Voltar</a></p>
+                                    <p><a href="{{route('pesq.alebras.create')}}" class="btn btn-primary btn-assinar">Novo</a></p>
+                                    <p><a href="{{route('pesq.alebras.index')}}" class="btn btn-success btn-assinar">Limpar</a></p>
                                 </div>
                             </div>
-                            <div class="form-admin">
-                                <?php $icon = '<i class="fas fa-save"></i>'; ?>
-                                {!!
-                                        form($form->add('salvar', 'submit', [
-                                            'attr' => ['class' => 'btn btn-salvar', 'style' => 'width:120px'],
-                                            'label' => $icon.' Salvar'
-                                         ]))
-                                 !!}
+                            <div class="row" style="margin-left: 10px; margin-right: 10px;">
+                                <livewire:table :config="App\Tables\AlebrasTable::class"/>
                             </div>
                         </div>
                         </div>

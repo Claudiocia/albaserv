@@ -46,4 +46,9 @@ class Ala extends Model implements Transformable
 		'predio_id',
 	];
 
+    public function predio()
+    {
+        return $this->belongsTo(Predio::class);
+    }
+
 }
