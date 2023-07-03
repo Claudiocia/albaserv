@@ -36,7 +36,6 @@ namespace App\Models{
  * @property-read \App\Models\Predio $predio
  * @mixin \Eloquent
  */
-	class Ala extends \Eloquent implements \Prettus\Repository\Contracts\Transformable {}
 }
 
 namespace App\Models{
@@ -83,7 +82,6 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Alebra whereUrl($value)
  * @mixin \Eloquent
  */
-	class Alebra extends \Eloquent implements \Prettus\Repository\Contracts\Transformable {}
 }
 
 namespace App\Models{
@@ -115,7 +113,6 @@ namespace App\Models{
  * @property-read \App\Models\Andar $andar
  * @mixin \Eloquent
  */
-	class Ambiente extends \Eloquent implements \Prettus\Repository\Contracts\Transformable {}
 }
 
 namespace App\Models{
@@ -139,7 +136,6 @@ namespace App\Models{
  * @property-read \App\Models\Ala $ala
  * @mixin \Eloquent
  */
-	class Andar extends \Eloquent implements \Prettus\Repository\Contracts\Transformable {}
 }
 
 namespace App\Models{
@@ -163,7 +159,6 @@ namespace App\Models{
  * @property-read \App\Models\Alebra $alebra
  * @mixin \Eloquent
  */
-	class Predio extends \Eloquent implements \Prettus\Repository\Contracts\Transformable {}
 }
 
 namespace App\Models{
@@ -276,7 +271,6 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|ResultDetalhe whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-	class ResultDetalhe extends \Eloquent implements \Prettus\Repository\Contracts\Transformable {}
 }
 
 namespace App\Models{
@@ -383,7 +377,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|ResultEleit whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-	class ResultEleit extends \Eloquent implements \Prettus\Repository\Contracts\Transformable {}
+
 }
 
 namespace App\Models{
@@ -474,7 +468,6 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|ResultPartido whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-	class ResultPartido extends \Eloquent implements \Prettus\Repository\Contracts\Transformable {}
 }
 
 namespace App\Models{
@@ -502,7 +495,6 @@ namespace App\Models{
  * @mixin \Eloquent
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\User> $users
  */
-	class Role extends \Eloquent implements \Prettus\Repository\Contracts\Transformable {}
 }
 
 namespace App\Models{
@@ -566,6 +558,5 @@ namespace App\Models{
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Role> $roles
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Laravel\Sanctum\PersonalAccessToken> $tokens
  */
-	class User extends \Eloquent implements \Prettus\Repository\Contracts\Transformable {}
 }
 
