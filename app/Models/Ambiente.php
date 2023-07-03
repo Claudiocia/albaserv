@@ -31,6 +31,7 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @property string|null $tag
  * @method static \Illuminate\Database\Eloquent\Builder|Ambiente whereChave($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Ambiente whereTag($value)
+ * @property-read \App\Models\Andar $andar
  * @mixin \Eloquent
  */
 class Ambiente extends Model implements Transformable

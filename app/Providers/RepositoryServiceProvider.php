@@ -12,6 +12,11 @@ use App\Repositories\AndarRepository;
 use App\Repositories\AndarRepositoryEloquent;
 use App\Repositories\PredioRepository;
 use App\Repositories\PredioRepositoryEloquent;
+use App\Repositories\ResultDetalheRepository;
+use App\Repositories\ResultDetalheRepositoryEloquent;
+use App\Repositories\ResultEleitRepository;
+use App\Repositories\ResultEleitRepositoryEloquent;
+use App\Repositories\ResultPartidoRepository;
 use App\Repositories\RoleRepository;
 use App\Repositories\RoleRepositoryEloquent;
 use App\Repositories\UserRepository;
@@ -32,6 +37,9 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(PredioRepository::class, PredioRepositoryEloquent::class);
         $this->app->bind(RoleRepository::class, RoleRepositoryEloquent::class);
         $this->app->bind(UserRepository::class, UserRepositoryEloquent::class);
+        $this->app->bind(ResultEleitRepository::class, ResultEleitRepositoryEloquent::class);
+        $this->app->bind(ResultDetalheRepository::class, ResultDetalheRepositoryEloquent::class);
+        $this->app->bind(ResultPartidoRepository::class, ResultPartidoRepository::class);
         //:end-bindings:
     }
 

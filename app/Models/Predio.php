@@ -23,6 +23,7 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @method static \Illuminate\Database\Eloquent\Builder|Predio whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Predio whereNome($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Predio whereUpdatedAt($value)
+ * @property-read \App\Models\Alebra $alebra
  * @mixin \Eloquent
  */
 class Predio extends Model implements Transformable

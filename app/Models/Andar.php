@@ -23,6 +23,7 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @method static \Illuminate\Database\Eloquent\Builder|Andar whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Andar whereNome($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Andar whereUpdatedAt($value)
+ * @property-read \App\Models\Ala $ala
  * @mixin \Eloquent
  */
 class Andar extends Model implements Transformable

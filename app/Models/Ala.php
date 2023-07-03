@@ -29,6 +29,7 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @method static \Illuminate\Database\Eloquent\Builder|Ala whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Ala withTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|Ala withoutTrashed()
+ * @property-read \App\Models\Predio $predio
  * @mixin \Eloquent
  */
 class Ala extends Model implements Transformable
